@@ -1,0 +1,206 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #28a745;
+  --light-gray: #f8f9fa;
+  --border-color: #ddd;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2 {
+  color: var(--primary-color);
+}
+
+.player-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.player-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.player-form button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.added-players,
+.added-goalkeepers {
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.added-players ul,
+.added-goalkeepers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.added-players li,
+.added-goalkeepers li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--light-gray);
+}
+
+.added-players li:last-child,
+.added-goalkeepers li:last-child {
+  border-bottom: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 5px;
+}
+
+.button-container button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-container button.edit {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.button-container button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.team-allocator button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  background-color: var(--light-gray);
+  flex: 1;
+}
+
+.team ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team li {
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.team li:last-child {
+  border-bottom: none;
+}
+
+.selected-goalkeeper {
+  font-weight: bold;
+  background-color: lightgreen;
+}
+
+@media (min-width: 768px) {
+  .teams {
+    flex-direction: row;
+  }
+  .added-players,
+  .added-goalkeepers {
+    max-height: 300px;
+  }
+}
+
+.theme-toggle {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.material-symbols-outlined {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-mode .app {
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+  color: #f8f9fa;
+}
+
+body.dark-mode .added-players li,
+body.dark-mode .added-goalkeepers li,
+body.dark-mode .team {
+  background-color: #444;
+  border-color: #666;
+}
+
+body.dark-mode .button-container button.edit {
+  background-color: #f8f9fa;
+  color: #222;
+}
+
+body.dark-mode .button-container button.delete {
+  background-color: #dc3545;
+  color: #f8f9fa;
+}
+
+body.dark-mode .material-symbols-outlined {
+  color: #f8f9fa;
+}
